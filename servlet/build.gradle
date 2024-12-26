@@ -28,10 +28,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	runtimeOnly 'org.springframework.boot:spring-boot-starter-tomcat'
+	// JSP 컴파일 엔진 (Tomcat Embed Jasper)
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.5' // Tomcat 버전에 맞춤
+
+	// Servlet API
+	providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0' // 제공되는 의존성
+
+	// JSTL API
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0'
+
+	// JSTL 구현체
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
+//	runtimeOnly 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 	implementation 'org.springframework.boot:spring-boot-starter-logging'
-	compileOnly group: 'javax.servlet', name: 'jsp-api', version: '2.0'
+
+//	compileOnly group: 'javax.servlet', name: 'jsp-api', version: '2.0'
 
 }
 
