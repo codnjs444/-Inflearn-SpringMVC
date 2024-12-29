@@ -112,4 +112,3 @@ public class MappingController {
         return "ok";
     }
 }
-wwwwww
