@@ -1,6 +1,7 @@
 package hello.springmvc.basic.request;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpMethod;
 import org.springframework.util.MultiValueMap;
@@ -17,7 +18,7 @@ public class RequestHeaderController {
 
     @RequestMapping("/headers")
     public String headers(HttpServletRequest request,
-                          HttpServletRequest response,
+                          HttpServletResponse response,
                           HttpMethod httpMethod,
                           Locale locale,
                           @RequestHeader MultiValueMap<String, String> headerMap,
